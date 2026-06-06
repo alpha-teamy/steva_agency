@@ -80,11 +80,13 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(20px);
             background: rgba(10, 10, 15, 0.8);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .navbar.scrolled {
-            padding: 0.5rem 0;
+            padding: 0.8rem 0;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(10, 10, 15, 0.95);
         }
 
         .nav-container {
@@ -105,6 +107,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -0.5px;
+            z-index: 1001;
         }
 
         .nav-links {
@@ -119,6 +122,7 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
@@ -147,6 +151,8 @@
             color: var(--text-primary);
             font-size: 1.5rem;
             cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
         }
 
         /* Hero Section */
@@ -157,7 +163,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 6rem 2rem 4rem;
+            padding: 8rem 2rem 4rem;
         }
 
         #particles-canvas {
@@ -176,6 +182,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
+            pointer-events: none;
         }
 
         .gradient-orb {
@@ -281,6 +288,7 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
             border: none;
         }
@@ -506,7 +514,7 @@
 
         .founders-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Reduced minmax for better fit */
             gap: 3rem;
         }
 
@@ -519,6 +527,9 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            height: 100%; /* Ensure equal height */
+            display: flex;
+            flex-direction: column;
         }
 
         .founder-card::before {
@@ -550,6 +561,7 @@
             margin-bottom: 1.5rem;
             position: relative;
             overflow: hidden;
+            flex-shrink: 0;
         }
 
         .founder-avatar img {
@@ -631,7 +643,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
@@ -644,6 +656,7 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
 
         .service-card::before {
@@ -725,6 +738,7 @@
             height: 200%;
             background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
+            pointer-events: none;
         }
 
         @keyframes rotate {
@@ -753,15 +767,16 @@
             border: 2px solid var(--border-color);
             backdrop-filter: blur(10px);
             box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+            width: 100%;
         }
 
-        /* Updated Video Styles */
         .custom-video-player {
             width: 100%;
             aspect-ratio: 16/9;
             background: #000;
             display: block;
             outline: none;
+            object-fit: cover;
         }
 
         .ai-avatar-info h3 {
@@ -863,6 +878,7 @@
             height: 200%;
             background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
             animation: rotate 40s linear infinite reverse;
+            pointer-events: none;
         }
 
         .realestate-content {
@@ -886,6 +902,7 @@
             border: 2px solid var(--border-color);
             backdrop-filter: blur(10px);
             box-shadow: 0 20px 60px rgba(16, 185, 129, 0.3);
+            width: 100%;
         }
 
         .realestate-info h3 {
@@ -965,7 +982,7 @@
 
         .projects-showcase {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Fixed minmax */
             gap: 3rem;
             margin-bottom: 4rem;
         }
@@ -978,6 +995,9 @@
             backdrop-filter: blur(10px);
             transition: all 0.4s ease;
             position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card.featured {
@@ -1014,6 +1034,7 @@
             font-size: 5rem;
             position: relative;
             overflow: hidden;
+            flex-shrink: 0;
         }
 
         .project-image::before {
@@ -1027,6 +1048,9 @@
 
         .project-content {
             padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-content h3 {
@@ -1038,6 +1062,7 @@
         .project-features {
             list-style: none;
             margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
 
         .project-features li {
@@ -1069,7 +1094,7 @@
 
         .robotics-services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1195,7 +1220,7 @@
 
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -1274,6 +1299,7 @@
             position: relative;
             width: 50%;
             padding: 0 2rem;
+            clear: both;
         }
 
         .timeline-item:nth-child(odd) {
@@ -1292,6 +1318,8 @@
             background: var(--gradient-1);
             border-radius: 50%;
             top: 0;
+            z-index: 2;
+            border: 3px solid var(--dark-bg);
         }
 
         .timeline-item:nth-child(odd) .timeline-dot {
@@ -1383,7 +1411,7 @@
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
@@ -1715,6 +1743,7 @@
             .ai-avatar-showcase,
             .realestate-showcase {
                 grid-template-columns: 1fr;
+                gap: 3rem;
             }
 
             .footer-grid {
@@ -1741,15 +1770,42 @@
             .realestate-features {
                 grid-template-columns: 1fr;
             }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
             .mobile-menu-btn {
                 display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(10, 10, 15, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.3s ease;
+                z-index: 1000;
+                border-left: 1px solid var(--border-color);
+                padding: 2rem;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
             }
 
             .founders-grid {
@@ -1766,10 +1822,23 @@
 
             .footer-grid {
                 grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
             }
 
             .values-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .hero {
+                padding-top: 6rem;
             }
         }
 
@@ -1826,18 +1895,18 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">STEVA AGENCY</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#ai-avatar">AI Avatar</a></li>
-                <li><a href="#realestate">Real Estate</a></li>
-                <li><a href="#hardware">Hardware</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#ai-avatar" onclick="closeMenu()">AI Avatar</a></li>
+                <li><a href="#realestate" onclick="closeMenu()">Real Estate</a></li>
+                <li><a href="#hardware" onclick="closeMenu()">Hardware</a></li>
+                <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="#team" onclick="closeMenu()">Team</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -1864,7 +1933,7 @@
                     <i class="fas fa-briefcase"></i> Explore Our Work
                 </a>
                 <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-calendar-check"></i> Schedule a Consultation
+                    <i class="fas fa-calendar-check"></i> Schedule Consultation
                 </a>
             </div>
         </div>
@@ -1879,7 +1948,7 @@
             </div>
             <div class="stat-card fade-in">
                 <div class="stat-number" data-target="10">0</div>
-                <div class="stat-label">Graduation Research Reviews</div>
+                <div class="stat-label">Research Reviews</div>
             </div>
             <div class="stat-card fade-in">
                 <div class="stat-number" data-target="8">0</div>
@@ -1895,7 +1964,7 @@
             </div>
             <div class="stat-card fade-in">
                 <div class="stat-number" data-target="100">0</div>
-                <div class="stat-label">IT Support & Hardware Expertise</div>
+                <div class="stat-label">IT Support Expertise</div>
             </div>
         </div>
     </section>
@@ -1950,7 +2019,7 @@
                     </div>
                     <div class="value-item">
                         <div class="value-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <h4>Continuous Learning</h4>
+                        <h4>Learning</h4>
                         <p>Staying ahead of technology trends</p>
                     </div>
                     <div class="value-item">
@@ -1975,7 +2044,6 @@
             <div class="ai-avatar-showcase">
                 <div class="ai-video-container fade-in">
                     <!-- VIDEO UPLOAD SECTION START -->
-                    <!-- Replace 'ai-avatar.mp4' with your actual video filename -->
                     <video class="custom-video-player" controls poster="">
                         <source src="ai-avatar.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -2019,8 +2087,6 @@
                             <span class="use-case-tag">Social Media</span>
                             <span class="use-case-tag">E-Learning</span>
                             <span class="use-case-tag">Corporate Presentations</span>
-                            <span class="use-case-tag">Customer Support</span>
-                            <span class="use-case-tag">News Updates</span>
                         </div>
                     </div>
                     
@@ -2079,7 +2145,6 @@
                             <span class="use-case-tag">Luxury Villas</span>
                             <span class="use-case-tag">Apartments</span>
                             <span class="use-case-tag">Land Development</span>
-                            <span class="use-case-tag">Construction Projects</span>
                         </div>
                     </div>
                     
@@ -2092,7 +2157,6 @@
                 
                 <div class="realestate-video-container fade-in">
                     <!-- VIDEO UPLOAD SECTION START -->
-                    <!-- Replace 'realestate.mp4' with your actual video filename -->
                     <video class="custom-video-player" controls poster="">
                         <source src="realestate-video.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -2134,7 +2198,6 @@
                             <span class="skill-tag">UI/UX Design</span>
                             <span class="skill-tag">Hardware Engineering</span>
                             <span class="skill-tag">Robotics</span>
-                            <span class="skill-tag">Networking</span>
                         </div>
                     </div>
                     
@@ -2148,7 +2211,6 @@
                             <li>Automation Projects</li>
                             <li>IT Support Operations</li>
                             <li>Robotics Projects</li>
-                            <li>Academic Technology Solutions</li>
                         </ul>
                     </div>
                 </div>
@@ -2210,7 +2272,6 @@
                         <li><i class="fas fa-check-circle"></i> Chatbots</li>
                         <li><i class="fas fa-check-circle"></i> Prompt Engineering</li>
                         <li><i class="fas fa-check-circle"></i> AI Integration</li>
-                        <li><i class="fas fa-check-circle"></i> Business Intelligence</li>
                     </ul>
                 </div>
                 
@@ -2279,7 +2340,6 @@
                         <li><i class="fas fa-check-circle"></i> Research Assistance</li>
                         <li><i class="fas fa-check-circle"></i> Presentations</li>
                         <li><i class="fas fa-check-circle"></i> Technical Documentation</li>
-                        <li><i class="fas fa-check-circle"></i> Educational Systems</li>
                     </ul>
                 </div>
             </div>
@@ -2308,14 +2368,12 @@
                             <li><i class="fas fa-check"></i> Precision Movement Control</li>
                             <li><i class="fas fa-check"></i> Safety Limit Sensors</li>
                             <li><i class="fas fa-check"></i> Load Weight Monitoring</li>
-                            <li><i class="fas fa-check"></i> Emergency Stop Function</li>
                         </ul>
                         <div class="tech-stack">
                             <span class="tech-tag">Arduino</span>
                             <span class="tech-tag">Bluetooth/WiFi</span>
                             <span class="tech-tag">Mobile App</span>
                             <span class="tech-tag">Motor Drivers</span>
-                            <span class="tech-tag">Sensors</span>
                         </div>
                     </div>
                 </div>
@@ -2332,14 +2390,12 @@
                             <li><i class="fas fa-check"></i> Speed Control via Gestures</li>
                             <li><i class="fas fa-check"></i> Directional Movement</li>
                             <li><i class="fas fa-check"></i> Auto-brake Safety</li>
-                            <li><i class="fas fa-check"></i> Obstacle Detection</li>
                         </ul>
                         <div class="tech-stack">
                             <span class="tech-tag">Arduino</span>
                             <span class="tech-tag">Flex Sensors</span>
                             <span class="tech-tag">Accelerometer</span>
                             <span class="tech-tag">Wireless Module</span>
-                            <span class="tech-tag">DC Motors</span>
                         </div>
                     </div>
                 </div>
@@ -2356,14 +2412,12 @@
                             <li><i class="fas fa-check"></i> SMS Alert to Authorities</li>
                             <li><i class="fas fa-check"></i> GPS Location Sharing</li>
                             <li><i class="fas fa-check"></i> Temperature Monitoring</li>
-                            <li><i class="fas fa-check"></i> Autonomous Navigation</li>
                         </ul>
                         <div class="tech-stack">
                             <span class="tech-tag">Arduino</span>
                             <span class="tech-tag">GSM Module</span>
                             <span class="tech-tag">Flame Sensors</span>
                             <span class="tech-tag">Water Pump</span>
-                            <span class="tech-tag">GPS Module</span>
                         </div>
                     </div>
                 </div>
@@ -2380,14 +2434,12 @@
                             <li><i class="fas fa-check"></i> Audio-Visual Warnings</li>
                             <li><i class="fas fa-check"></i> Auto-lock Safety Doors</li>
                             <li><i class="fas fa-check"></i> Gas Shut-off System</li>
-                            <li><i class="fas fa-check"></i> Emergency Contact Notification</li>
                         </ul>
                         <div class="tech-stack">
                             <span class="tech-tag">Arduino</span>
                             <span class="tech-tag">Vibration Sensor</span>
                             <span class="tech-tag">GSM Module</span>
                             <span class="tech-tag">Buzzer/LED</span>
-                            <span class="tech-tag">Relay Modules</span>
                         </div>
                     </div>
                 </div>
@@ -2457,7 +2509,6 @@
                         <li>Student Dashboard</li>
                         <li>HOD Dashboard</li>
                         <li>Automated Attendance Reports</li>
-                        <li>Alert System</li>
                     </ul>
                 </div>
                 
@@ -2609,7 +2660,6 @@
                         <span class="skill-item">Sensor Integration</span>
                         <span class="skill-item">Motor Control</span>
                         <span class="skill-item">IoT</span>
-                        <span class="skill-item">GSM Modules</span>
                     </div>
                 </div>
                 
@@ -2660,7 +2710,6 @@
                             <li>Desktop Troubleshooting</li>
                             <li>Software Installation</li>
                             <li>Technical Support</li>
-                            <li>Network Support</li>
                         </ul>
                     </div>
                 </div>
@@ -3047,19 +3096,29 @@
 
         // Mobile menu toggle
         function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when link clicked
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
         }
 
         // Particle Animation
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
         let particles = [];
-        const particleCount = 100;
+        const particleCount = 80; // Slightly reduced for performance
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
 
         class Particle {
             constructor() {
@@ -3123,12 +3182,12 @@
             requestAnimationFrame(animateParticles);
         }
 
+        resizeCanvas();
         initParticles();
         animateParticles();
 
         window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            resizeCanvas();
             initParticles();
         });
 
@@ -3177,20 +3236,6 @@
             observer.observe(el);
         });
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -3209,6 +3254,7 @@
                 z-index: 10000;
                 animation: slideIn 0.3s ease;
                 font-weight: 600;
+                max-width: 90%;
             `;
             notification.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! We will contact you soon.';
             document.body.appendChild(notification);
@@ -3235,19 +3281,21 @@
         `;
         document.head.appendChild(style);
 
-        // Parallax effect for hero orbs
-        window.addEventListener('mousemove', (e) => {
-            const orbs = document.querySelectorAll('.gradient-orb');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            orbs.forEach((orb, index) => {
-                const speed = (index + 1) * 20;
-                const xOffset = (0.5 - x) * speed;
-                const yOffset = (0.5 - y) * speed;
-                orb.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+        // Parallax effect for hero orbs (Disabled on mobile for performance)
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            window.addEventListener('mousemove', (e) => {
+                const orbs = document.querySelectorAll('.gradient-orb');
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                orbs.forEach((orb, index) => {
+                    const speed = (index + 1) * 20;
+                    const xOffset = (0.5 - x) * speed;
+                    const yOffset = (0.5 - y) * speed;
+                    orb.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+                });
             });
-        });
+        }
     </script>
 </body>
 </html>
